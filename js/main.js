@@ -4,6 +4,7 @@ import { createBoard } from './ui/board.js';
 
 let solvedBoard;
 let puzzleBoard;
+const darkModeToggle = document.getElementById('toggle-darkmode');
 
 function startNewGame(difficulty = 'easy') {
     let board = createEmptyBoard();
@@ -33,6 +34,6 @@ window.addEventListener('DOMContentLoaded', () => {
     startNewGame();
 }) ;
 
-document.getElementById('toggle-darkmode').addEventListener('click', () => {
+darkModeToggle.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
 });
