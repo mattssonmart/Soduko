@@ -11,6 +11,11 @@ export function createBoard(board, solvedBoard) {
             cell.dataset.row = row;
             cell.dataset.col = col;
         
+            const boxRow = Math.floor(row / 3);
+            const boxCol = Math.floor( col / 3);
+            const boxNumber = boxRow * 3 + boxCol * 3;
+            cell.classList.add(`box-${boxNumber}`);
+
         if (board[row][col] !== 0) {
             cell.value = board[row][col];
             cell.disabled = true;
@@ -35,13 +40,13 @@ export function updateCell(board, row, col, value, solvedBoard) {
     board[row][col] = 0;
 
     if (!boardIsValid(board, row, col, value))  {
-        cell.style.backgroundColor = 'red';
+        cell.classList.add('invalid');
         board[row][col] = temp;
         return;
     }
     else {
+        cell.classList.add('invalid');
         board[row][col] = value;
-        cell.style.backgroundColor = '';
     }
 
     if (puzzleSolved(board, solvedBoard)) {

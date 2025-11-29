@@ -32,3 +32,7 @@ document.getElementById('restart').addEventListener('click', () => {
 window.addEventListener('DOMContentLoaded', () => {
     startNewGame();
 }) ;
+
+document.getElementById('toggle-darkmode').addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+});

@@ -1,3 +1,9 @@
+body {
+    background-color: #f0f0f0;
+    color: #222;
+    font-family: Arial, sans-serif;
+}
+
 #sudoku-container {
     display: grid;
     grid-template-columns: repeat(9, 50px);
@@ -14,6 +20,15 @@
     font-size: 24px;
     border: 1px solid #000;
     box-sizing: border-box;
+    background: linear-gradient(to bottom, #f8f8f8 0%, #e0e0e0 100%);
+    color: #222;
+}
+
+#sudoku-container input.box-2,
+#sudoku-container input.box-4,
+#sudoku-container input.box-6,
+#sudoku-container input.box-8 {
+    background: linear-gradient(to bottom, #ececec 0%, #d8d8d8 100%);
 }
 
 #sudoku-container input:nth-child(3n) {
@@ -26,11 +41,12 @@
 }
 
 #sudoku-container input:disabled {
-    background-color: #eee;
+    background: linear-gradient(to bottom, #e8e8e8 0%, #dcdcdc 100%);
+    color: #555;
 }
 
 #sudoku-container input.invalid {
-    background-color: #f88;
+    background: linear-gradient(to bottom, #f88 0%, #e55 100%) !important;
 }
 
 .controls {
@@ -38,7 +54,8 @@
     margin-top: 20px;
 }
 
-.controls button, .controls select {
+.controls button,
+.controls select {
     padding: 10px 15px;
     margin: 5px;
     font-size: 16px;
@@ -49,4 +66,43 @@
     margin-top: 15px;
     font-size: 18px;
     font-weight: bold;
+}
+
+body.dark-mode {
+    background-color: #222;
+    color: #f8f8f8;
+}
+
+body.dark-mode #sudoku-container input {
+    background: linear-gradient(to bottom, #333 0%, #444 100%);
+    color: #f8f8f8;
+    border: 1px solid #555;
+}
+
+body.dark-mode #sudoku-container input.box-2,
+body.dark-mode #sudoku-container input.box-4,
+body.dark-mode #sudoku-container input.box-6,
+body.dark-mode #sudoku-container input.box-8 {
+    background: linear-gradient(to bottom, #444 0%, #555 100%);
+}
+
+body.dark-mode #sudoku-container input:disabled {
+    background: linear-gradient(to bottom, #555 0%, #666 100%);
+    color: #ccc;
+}
+
+body.dark-mode #sudoku-container input.invalid {
+    background: linear-gradient(to bottom, #d55 0%, #b33 100%) !important;
+}
+
+body.dark-mode .controls button,
+body.dark-mode .controls select {
+    background-color: #444;
+    color: #f8f8f8;
+    border: 1px solid #666;
+}
+
+body.dark-mode .controls button:hover,
+body.dark-mode .controls select:hover {
+    background-color: #555;
 }
