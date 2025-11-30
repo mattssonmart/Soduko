@@ -31,18 +31,23 @@ body {
     background: linear-gradient(to bottom, #ececec 0%, #d8d8d8 100%);
 }
 
-#sudoku-container input:nth-child(3n) {
-    border-right: 3px solid black;
-}
-
-#sudoku-container input:nth-child(n+19):nth-child(-n+27),
-#sudoku-container input:nth-child(n+46):nth-child(-n+54) {
-    border-bottom: 3px solid black;
-}
-
 #sudoku-container input:disabled {
-    background: linear-gradient(to bottom, #e8e8e8 0%, #dcdcdc 100%);
-    color: #555;
+    color: #222;
+}
+
+#sudoku-container input.box-2:disabled,
+#sudoku-container input.box-4:disabled,
+#sudoku-container input.box-6:disabled,
+#sudoku-container input.box-8:disabled {
+    background: linear-gradient(to bottom, #ececec 0%, #d8d8d8 100%);
+}
+
+#sudoku-container input.box-1:disabled,
+#sudoku-container input.box-3:disabled,
+#sudoku-container input.box-5:disabled,
+#sudoku-container input.box-7:disabled,
+#sudoku-container input.box-9:disabled {
+    background: linear-gradient(to bottom, #f8f8f8 0%, #e0e0e0 100%);
 }
 
 #sudoku-container input.invalid {
@@ -86,9 +91,31 @@ body.dark-mode #sudoku-container input.box-8 {
     background: linear-gradient(to bottom, #444 0%, #555 100%);
 }
 
+body.dark-mode #sudoku-container input.box-1,
+body.dark-mode #sudoku-container input.box-3,
+body.dark-mode #sudoku-container input.box-5,
+body.dark-mode #sudoku-container input.box-7,
+body.dark-mode #sudoku-container input.box-9 {
+    background: linear-gradient(to bottom, #333 0%, #444 100%);
+}
+
 body.dark-mode #sudoku-container input:disabled {
-    background: linear-gradient(to bottom, #555 0%, #666 100%);
     color: #ccc;
+}
+
+body.dark-mode #sudoku-container input.box-2:disabled,
+body.dark-mode #sudoku-container input.box-4:disabled,
+body.dark-mode #sudoku-container input.box-6:disabled,
+body.dark-mode #sudoku-container input.box-8:disabled {
+    background: linear-gradient(to bottom, #444 0%, #555 100%);
+}
+
+body.dark-mode #sudoku-container input.box-1:disabled,
+body.dark-mode #sudoku-container input.box-3:disabled,
+body.dark-mode #sudoku-container input.box-5:disabled,
+body.dark-mode #sudoku-container input.box-7:disabled,
+body.dark-mode #sudoku-container input.box-9:disabled {
+    background: linear-gradient(to bottom, #333 0%, #444 100%);
 }
 
 body.dark-mode #sudoku-container input.invalid {
@@ -105,4 +132,13 @@ body.dark-mode .controls select {
 body.dark-mode .controls button:hover,
 body.dark-mode .controls select:hover {
     background-color: #555;
+}
+
+#sudoku-container input:nth-child(3n) {
+    border-right: 3px solid black;
+}
+
+#sudoku-container input:nth-child(n+19):nth-child(-n+27),
+#sudoku-container input:nth-child(n+46):nth-child(-n+54) {
+    border-bottom: 3px solid black;
 }

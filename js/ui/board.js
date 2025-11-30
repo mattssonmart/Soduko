@@ -12,9 +12,10 @@ export function createBoard(board, solvedBoard) {
             cell.dataset.col = col;
         
             const boxRow = Math.floor(row / 3);
-            const boxCol = Math.floor( col / 3);
-            const boxNumber = boxRow * 3 + boxCol * 3;
+            const boxCol = Math.floor(col / 3);
+            const boxNumber = boxRow * 3 + boxCol + 1;
             cell.classList.add(`box-${boxNumber}`);
+
 
         if (board[row][col] !== 0) {
             cell.value = board[row][col];
@@ -45,7 +46,7 @@ export function updateCell(board, row, col, value, solvedBoard) {
         return;
     }
     else {
-        cell.classList.add('invalid');
+        cell.classList.remove('invalid');
         board[row][col] = value;
     }
 
